@@ -1,5 +1,192 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "EB Garamond";
+  src: url(./assets/fonts/Georgia.ttf);
+}
+
 /* Variables */
+:root {
+  --primary: #111111;
+  --bg: linear-gradient(111.34deg, #fff7ef 0%, #f3f2ff 100%);
+  --sandle: #ddc4ac;
+  --pink: #deadad;
+  --violet: #aba7d9;
+  --gray: #a6a6a6;
+}
+
 /* Base Styles */
+body {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+header .logo h1 {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 31px;
+}
+
+header .close_menu {
+  display: flex;
+  align-items: center;
+}
+
+header .close_menu a {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 23px;
+  color: var(--primary);
+}
+
+main .link {
+  display: flex;
+  gap: 1rem;
+}
+
+main .link > p {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+main .link > p:nth-child(1) {
+  font-size: 1.5rem;
+}
+
+main .journal p:nth-child(2) {
+  font-style: italic;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+footer p {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 23px;
+  color: var(--gray);
+}
+
 /* Mobile Styles */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header .close_menu {
+  gap: 0.75rem;
+}
+
+main {
+  place-self: center;
+}
+
+main .link > p {
+  font-size: 3.5rem;
+}
+
+main .index {
+  color: var(--sandle);
+}
+
+main .discover {
+  color: var(--pink);
+}
+
+main .journal {
+  color: var(--primary);
+  justify-content: flex-end;
+}
+
+main .social {
+  color: var(--violet);
+  justify-content: center;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 600px) {
+  main .link > p {
+    font-size: 4.5rem;
+  }
+
+  main .index {
+    margin-left: 72px;
+  }
+}
+
+/* Large Tablet Styles */
+@media screen and (min-width: 790px) {
+  header .close_menu {
+    gap: 1.5rem;
+  }
+
+  main .link > p {
+    font-size: 5.5rem;
+  }
+}
+
+/* Laptop Styles */
+@media screen and (min-width: 1024px) {
+  /* Nested Grid Created */
+  main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    place-self: stretch;
+  }
+
+  main > * {
+    grid-column: 3 / span 7;
+  }
+
+  main .link > p {
+    font-size: 7.5rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1600px) {
+  main {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
